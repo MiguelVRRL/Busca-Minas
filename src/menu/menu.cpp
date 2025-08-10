@@ -1,3 +1,4 @@
+#include "../utils/enums.h"
 #include <raylib.h>
 
 class Menu {
@@ -5,16 +6,26 @@ class Menu {
 public:
   Menu();
   ~Menu();
-  void DrawMenu();
-  void UpdateMenu();
+  auto getDifficulty() -> Difficulty;
+
+  auto setDifficulty(Difficulty difficulty) -> void;
+
+  auto DrawMenu() -> void;
+  auto UpdateMenu() -> void;
 
 private:
+  Difficulty m_difficulty;
 };
 
-Menu::Menu() {}
+Menu::Menu() { m_difficulty = None; }
 
 Menu::~Menu() {}
 
+auto Menu::getDifficulty() -> Difficulty { return m_difficulty; }
+
+auto Menu::setDifficulty(Difficulty difficulty) -> void {
+  m_difficulty = difficulty;
+}
 
 auto Menu::DrawMenu() -> void {
   BeginDrawing();
@@ -22,4 +33,3 @@ auto Menu::DrawMenu() -> void {
 }
 
 auto Menu::UpdateMenu() -> void {}
-

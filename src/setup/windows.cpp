@@ -7,15 +7,15 @@ public:
   Window();
   ~Window();
 
-  int getMaxWidth();
-  int getMaxHeight();
-  int getMinWidth();
-  int getMinHeight();
-  int getFps();
-  const char *getWindowName();
-  ScreenState getScreenState();
+  auto getMaxWidth() -> int;
+  auto getMaxHeight() -> int;
+  auto getMinWidth() -> int;
+  auto getMinHeight() -> int;
+  auto getFps() -> int;
+  auto getWindowName() -> const char *;
+  auto getScreenState() -> ScreenState;
 
-  void setScreeState(ScreenState screenState);
+  auto setScreeState(ScreenState screenState) -> void;
 
 private:
   int32_t m_fps;
