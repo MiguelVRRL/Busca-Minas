@@ -1,6 +1,6 @@
 #include <string>
 
-enum ScreenState { Menu, InGame };
+enum ScreenState { MenuState, InGame };
 
 class Window {
 public:
@@ -37,7 +37,7 @@ Window::Window() {
   m_min_height = 480;
 
   m_window_name = "Minesweeper";
-  m_screen_state = Menu;
+  m_screen_state = MenuState;
 }
 
 Window::~Window() {}

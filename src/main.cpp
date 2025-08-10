@@ -1,3 +1,5 @@
+#include "menu/menu.h"
+#include "minesweeper/core.h"
 #include "setup/windows.h"
 #include <raylib.h>
 
@@ -10,16 +12,20 @@ auto main() -> int {
   SetTargetFPS(window.getFps());
   SetWindowMinSize(window.getMinWidth(), window.getMinHeight());
 
+  Menu menu;
+  Core mine_sweeper;
+
   while (!WindowShouldClose()) {
 
     switch (window.getScreenState()) {
-    case Menu:
-      BeginDrawing();
-      EndDrawing();
+    case MenuState:
+      menu.DrawMenu();
+      menu.UpdateMenu();
       break;
     case InGame:
-      BeginDrawing();
-      EndDrawing();
+      mine_sweeper.DrawBoard();
+      mine_sweeper.UpdateBoard();
+      break;
     }
   }
   CloseWindow();

@@ -3,7 +3,7 @@
 
 #include <string>
 
-enum ScreenState { Menu, InGame };
+enum ScreenState { MenuState, InGame };
 
 class Window {
 public:
