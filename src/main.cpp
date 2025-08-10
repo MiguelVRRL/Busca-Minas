@@ -1,12 +1,28 @@
+#include "setup/windows.h"
 #include <raylib.h>
 
-int main() {
-  InitWindow(200, 200, "pepe");
+auto main() -> int {
+
+  Window window;
+  // -- ralylib setup --
+  InitWindow(window.getMaxWidth(), window.getMaxHeight(),
+             window.getWindowName());
+  SetTargetFPS(window.getFps());
+  SetWindowMinSize(window.getMinWidth(), window.getMinHeight());
 
   while (!WindowShouldClose()) {
-    BeginDrawing();
-    EndDrawing();
+
+    switch (window.getScreenState()) {
+    case Menu:
+      BeginDrawing();
+      EndDrawing();
+      break;
+    case InGame:
+      BeginDrawing();
+      EndDrawing();
+    }
   }
   CloseWindow();
+
   return 0;
 }
