@@ -21,6 +21,10 @@ auto main() -> int {
     case MenuState:
       menu.DrawMenu();
       menu.UpdateMenu();
+      if (menu.getDifficulty() != None) {
+        window.setScreeState(InGame);
+        mine_sweeper.setDifficulty(menu.getDifficulty());
+      };
       break;
     case InGame:
       mine_sweeper.DrawBoard();
