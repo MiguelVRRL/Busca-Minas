@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <string>
 
 enum ScreenState { MenuState, InGame };
