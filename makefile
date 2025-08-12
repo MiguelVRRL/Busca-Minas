@@ -21,6 +21,9 @@ release: | $(BUILD_PATH) ## compile the program
 	$(COMPILER) -O3 -DNDEBUG $(OBJS) $(FLAGS) $(LIBS) -o $(BUILD_PATH)/$(APPNAME)
 	@echo "Build Finished!"
 
+windows_test:
+	x86_64-w64-mingw32-g++ -g $(SRC) $(FLAGS) -lraylibWin64 -lopengl32 -lgdi32 -static -o $(BUILD_PATH)/$(APPNAME)
+
 run: ## run the binary
 	@./$(BUILD_PATH)/$(APPNAME)
 
