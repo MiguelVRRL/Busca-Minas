@@ -1,7 +1,6 @@
 #ifndef WINDOWS_H
 #define WINDOWS_H
 
-#include <cstdint>
 #include <string>
 
 enum ScreenState { MenuState, InGame };
