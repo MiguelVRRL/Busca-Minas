@@ -1,4 +1,5 @@
 #include "../utils/enums.h"
+#include "../utils/grid.h"
 #include <raylib.h>
 
 class Menu {
@@ -15,9 +16,13 @@ public:
 
 private:
   Difficulty m_difficulty;
+  ButtonGrid m_button_grid;
 };
 
-Menu::Menu() { m_difficulty = None; }
+Menu::Menu() {
+  m_button_grid = ButtonGrid();
+  m_difficulty = None;
+}
 
 Menu::~Menu() {}
 
